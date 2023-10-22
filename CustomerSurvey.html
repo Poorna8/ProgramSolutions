@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Survey Form</title>
+    
+    <style>
+		.bg-container {
+    background-color: #03b1fc;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    margin: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Lucida Console", monospace;
+
+}
+
+.card-container {
+    background-color: #ffffff;
+    color: black;
+
+
+    margin: 50px;
+    margin-left: 50px;
+    margin-right: 150px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: baseline;
+}
+
+.gender {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-container {
+    font-family: "Sans-Serif";
+
+}
+
+.submitbutton {
+    background-color: #0394fc;
+    height: 30px;
+    width: 60px;
+    color: #ffffff;
+    border: 0px;
+    border-radius: 2px;
+    align-self: auto;
+}
+
+.division {
+    display: flex;
+    padding-right: 10px;
+}
+
+.resetbutton {
+    margin-left: 30px;
+    background-color: #0394fc;
+    height: 30px;
+    width: 60px;
+    color: #ffffff;
+    border: 0px;
+    border-radius: 2px;
+    align-self: auto;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon {
+    color: black;
+    margin-top: 0px;
+    font-size: 12px;
+    display: flex;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.lower {
+    display: flex;
+    margin-top: 0px;
+    font-size: 12px;
+    color: #9ce6b9;
+    font-weight: bold;
+}
+
+	</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<meta name="robots" content="none,noarchive"/>
+</head>
+
+<body>
+    <div class="bg-container">
+        <form>
+            <div class="bg-container">
+                <h1 class="heading">Customer Survey Form</h1>
+                <div class="card-container">
+                    First Name <input id="FirstName" type="text" required><br>
+
+                    Last Name <input id="LastName" type="text" required><br>
+                    Date Of Birth <input id="BirthDate" type="date" required><br>
+                    Country <select required>
+                        <option>select</option>
+                        <option>india</option>
+                        <option>nepal</option>
+                        <option>srilanka</option>
+                        <option>bangladesh</option>
+                    </select><br>
+                    <div class="gender">
+                        Gender <input type="checkbox"> MAle
+                        <input type="checkbox"> Female
+
+                    </div>
+                    <br>Profession <input required />
+                    <br>Email <input type="email" required>
+                    <br>Mobile <input type="number" maxlength="10" required>
+
+                    <br>
+                    <div class="division">
+                        <button onclick="button1()" class="submitbutton">Submit</button>
+                        <br>
+                        <button onclick="button2()" class="resetbutton">Reset</button>
+
+                    </div>
+
+                </div>
+                <div class="icon-container">
+                    <p class="lower ">Customer Survey Form. All Rights Reserved | Design by </p>
+                    <p class="icon "> W3Layouts</p>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+<script >
+	function button1() {
+    alert("submitted successfully.!")
+}
+
+function button2() {
+
+}
+
+</script>
+</body>
+
+</html>

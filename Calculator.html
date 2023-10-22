@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html>
+
+<head> 
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.bg-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    width: 360px;
+    margin: 0 auto;
+    height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #ccc;
+    background-color: #f7f7f7;
+    font-family: "Roboto";
+}
+
+input[type="text"] {
+    border: none;
+    padding: 5px;
+    width: 76%;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 20px;
+}
+
+.clear-btn {
+    width: 20%;
+    background-color: #24ab94;
+    color: #ffffff;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+}
+
+.input-result-container {
+    height: 60px;
+    width: 97%;
+    padding-left: 10px;
+    background-color: #ffffff;
+}
+
+.button {
+    width: 70px;
+    height: 40px;
+    font-size: 18px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+}
+
+.result {
+    font-size: 24px;
+    text-align: right;
+    margin: 10px 0;
+    color: red;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.button-section {
+    display: flex;
+}
+
+.numbers {
+    background-color: #000000;
+    width: 80%;
+    height: 100%;
+}
+
+.mathematical-symbols {
+    background-color: #757876;
+    width: 20%;
+    height: 100%;
+}
+
+	</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<meta name="robots" content="none,noarchive"/>
+</head>
+
+
+<body>
+    <div class="bg-container d-flex">
+        <div class="calculator">
+            <div class="input-result-container">
+                <input type="text" id="display" disabled>
+                <button class="clear-btn" onclick="clearDisplay()">AC</button>
+            </div>
+            <div class="button-section">
+                <div class="numbers">
+                    <div>
+                        <button class="button" onclick="appendToDisplay('9')">9</button>
+                        <button class="button" onclick="appendToDisplay('8')">8</button>
+                        <button class="button" onclick="appendToDisplay('7')">7</button>
+                    </div>
+                    <div>
+                        <button class="button" onclick="appendToDisplay('4')">4</button>
+                        <button class="button" onclick="appendToDisplay('5')">5</button>
+                        <button class="button" onclick="appendToDisplay('6')">6</button>
+                    </div>
+                    <div>
+                        <button class="button" onclick="appendToDisplay('1')">1</button>
+                        <button class="button" onclick="appendToDisplay('2')">2</button>
+                        <button class="button" onclick="appendToDisplay('3')">3</button>
+                    </div>
+                    <div>
+                        <button class="button" onclick="appendToDisplay('.')">.</button>
+                        <button class="button" onclick="appendToDisplay('0')">0</button>
+                        <button class="button" onclick="calculate()">=</button>
+                    </div>
+                </div>
+                <div class="mathematical-symbols">
+                    <button class="button" onclick="appendToDisplay('+')">+</button>
+                    <button class="button" onclick="appendToDisplay('-')">-</button>
+                    <button class="button" onclick="appendToDisplay('/')">/</button>
+                    <button class="button" onclick="appendToDisplay('*')">x</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script >
+	let display = document.getElementById('display');
+let currentInput = '';
+
+function appendToDisplay(value) {
+    currentInput += value;
+    display.value = currentInput;
+}
+
+function clearDisplay() {
+    currentInput = '';
+    display.value = '';
+}
+
+function calculate() {
+    try {
+        currentInput = eval(currentInput);
+        display.value = currentInput;
+    } catch (error) {
+        display.value = 'Error';
+    }
+}
+
+</script>
+</body>
+
+</html>
